@@ -1,7 +1,14 @@
-document.querySelector(".backdrop").classList.add("active");
+(() => {
+  const refs = {
+    openModalBtn: document.querySelector("[data-modal-open]"),
+    closeModalBtn: document.querySelector("[data-modal-close]"),
+    modal: document.querySelector("[data-modal]"),
+  };
 
-document.querySelector(".backdrop").addEventListener("click", function (e) {
-  if (e.target.classList.contains("backdrop")) {
-    this.classList.remove("active");
+  refs.openModalBtn.addEventListener("click", toggleModal);
+  refs.closeModalBtn.addEventListener("click", toggleModal);
+
+  function toggleModal() {
+    refs.modal.classList.toggle("is-open");
   }
-});
+})();

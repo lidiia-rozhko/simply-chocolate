@@ -374,7 +374,9 @@
               </li>
             </ul>
           </div>
-          <button type="button" class="review-btn">Leave a review</button>
+          <button type="button" class="review-btn" data-modal-open>
+            Leave a review
+          </button>
         </section>
       </div>
     </main>
@@ -420,9 +422,9 @@
       </div>
     </footer>
     <!--------------- MODAL ----------->
-    <div class="backdrop">
+    <div class="backdrop" data-modal>
       <div class="modal">
-        <button type="button" class="modal-close-btn">
+        <button type="button" class="modal-close-btn" data-modal-close>
           <svg width="28" height="28" class="modal-close-icon">
             <use href="./images/symbol-defs.svg#icon-modal-close"></use>
           </svg>
@@ -485,17 +487,34 @@
               class="modal-textarea"
             ></textarea>
           </div>
+
           <div class="modal-field">
-            <!-- <label for="user-tel" class="modal-lable">Comment</label> -->
-            <input type="checkbox" class="modal-checkbox" required />
-            <a class="checkbox-link"
-              >I accept the terms and conditions of the
-            </a>
-            <a href="" class="checkbox-link-policy">Privacy Policy</a>
+            <input
+              type="checkbox"
+              class="modal-checkbox visually-hidden"
+              id="checkbox"
+              required
+              value="accept"
+            />
+            <label for="checkbox" class="checkbox-lable checkbox-link"
+              ><span class="modal-check-box">
+                <svg width="10" height="10" class="modal-check-icon">
+                  <use
+                    href="./images/symbol-defs.svg#icon-check"
+                  ></use></svg></span
+              >I accept the terms and conditions of the<a
+                href=""
+                class="checkbox-link-policy"
+                target="_blank"
+                >Privacy Policy</a
+              >
+            </label>
           </div>
+
           <button type="submit" class="modal-btn">Send</button>
         </form>
       </div>
     </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
