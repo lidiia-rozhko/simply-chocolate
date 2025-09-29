@@ -56,14 +56,14 @@ address {
 }
 
 .container {
-  width: 1166px;
-  padding-left: 15px;
-  padding-right: 15px;
+  width: 375px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin: 0 auto;
 }
 
 .container-narro {
-  width: 1086px;
+  width: 375px;
 }
 
 .visually-hidden {
@@ -114,21 +114,112 @@ header {
   bottom: 0;
 }
 
-.header-navigation {
-  display: flex;
-  gap: 90px;
-  align-items: center;
+.header-mob-navigation {
+  display: block;
 }
 
-.header-navigation ul {
-  display: flex;
+.header-nav-soc-icon {
+  display: none;
   gap: 18px;
   align-items: center;
 }
 
 .header-list {
-  display: flex;
+  display: none;
   gap: 24px;
+}
+
+.header-menu-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.header-menu-open-btn {
+  fill: transparent;
+  stroke: #111111;
+}
+
+.header-mob-menu {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1e1823;
+  padding: 20px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 250ms ease, visibility 250ms ease;
+}
+
+.header-mob-menu-flex {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-menu-close-btn {
+  display: block;
+  margin-left: auto;
+  fill: transparent;
+  stroke: #fff;
+  border: none;
+  background-color: transparent;
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header-menu-close-btn:hover,
+.header-menu-close-btn:focus {
+  stroke: var(--orange);
+}
+
+.header-menu-close-icon {
+  margin-bottom: 88px;
+}
+
+.header-mob-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-mob-nav {
+  margin-bottom: 24px;
+}
+
+.menu-nav-mob-link {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-nav-mob-link:hover,
+.menu-nav-mob-link:focus {
+  color: var(--orange);
+}
+
+.header-mob-soc-icon {
+  display: flex;
+  gap: 18px;
+}
+
+.menu-nav-mob-icon {
+  fill: transparent;
+  stroke: #fff;
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-nav-mob-icon:hover,
+.menu-nav-mob-icon:focus {
+  stroke: var(--orange);
 }
 
 .menu-nav-link {
@@ -162,29 +253,38 @@ header {
 /* --------------- MAIN --------------- */
 
 .main-section {
-  max-width: 1200px;
-  height: 600px;
+  max-width: 375px;
+  height: 620px;
 
   background-color: var(--violet);
   background-image: linear-gradient(
       rgba(30, 24, 35, 0.4),
       rgba(30, 24, 35, 0.4)
     ),
-    url("../images/main-bg-img.jpg");
+    url("../images/main-bg-img-mobile.jpg");
   background-position: center;
   background-repeat: no-repeat;
 
-  padding-top: 381px;
-  padding-bottom: 40px;
+  padding-top: 395px;
+  padding-bottom: 20px;
   border-radius: 30px;
-  margin: 0 auto 72px auto;
+  margin: 0 auto 60px auto;
+
+  @media screen and (min-resolution: 2x), (-webkit-min-device-pixel-ratio: 2) {
+    background-color: var(--violet);
+    background-image: linear-gradient(
+        rgba(30, 24, 35, 0.4),
+        rgba(30, 24, 35, 0.4)
+      ),
+      url("../images/main-bg-img-mobile-2x.jpg");
+  }
 }
 
 .main-title {
-  width: 484px;
+  width: 295px;
+  font-size: 20px;
   font-weight: 500;
-  font-size: 28px;
-  line-height: 34px;
+  line-height: 1.2;
   letter-spacing: -0.03em;
   color: var(--white);
   margin-bottom: 32px;
@@ -193,7 +293,7 @@ header {
 .main-btn,
 .link-made {
   border-radius: 100px;
-  padding: 14px 40px;
+  padding: 12px 28px;
   font-weight: 600;
   font-size: 14px;
   color: var(--white);
@@ -208,20 +308,16 @@ header {
   border: none;
 }
 
-.main-btns {
-  display: flex;
-}
-
 .main-btn {
   background-color: var(--orange);
   margin-right: 14px;
   border: none;
-  min-width: 144px;
+  min-width: 120px;
 }
 
 .link-made {
   border: 1px solid var(--white);
-  min-width: 183px;
+  min-width: 159px;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -234,15 +330,15 @@ header {
 
 .scroll {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 18px;
   letter-spacing: -0.03em;
   color: var(--white);
   margin: auto 0 auto auto;
-  display: flex;
-  gap: 14px;
   align-items: center;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  margin-top: 32px;
 }
 
 .scroll:hover,
@@ -253,10 +349,11 @@ header {
 .main-btn-scroll {
   background-color: #fff;
   border-radius: 50%;
-  padding: 8px;
+  padding: 6px;
   fill: var(--orange);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-left: 12px;
 }
 
 .scroll:hover .main-btn-scroll,
@@ -268,30 +365,19 @@ header {
 /* ------------- Features ------------ */
 .features-section {
   background-color: var(--violet);
-  padding-top: 50px;
-  padding-bottom: 51px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .features-list {
   display: flex;
-  gap: 70px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .features-list li {
   position: relative;
-}
-
-.features-list li:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 1px;
-  height: 124px;
-  background-color: rgba(255, 255, 255, 0.5);
-  left: 326px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .features-icon {
@@ -318,13 +404,13 @@ header {
 
 /* --------- EXCEPTIONAL TASTE SENSATION -------- */
 .taste-section {
-  padding-top: 100px;
-  padding-bottom: 50px;
+  padding-top: 60px;
+  padding-bottom: 30px;
 }
 
 .second-title {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 28px;
   letter-spacing: -0.03em;
   text-transform: uppercase;
@@ -333,8 +419,8 @@ header {
 }
 
 .second-title-taste {
-  max-width: 411px;
-  margin: 0 auto 28px auto;
+  max-width: 283px;
+  margin: 0 auto 24px auto;
 }
 
 .taste-title {
@@ -344,24 +430,30 @@ header {
 .sensation-paragraf {
   font-weight: 400;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 1.3;
   letter-spacing: -0.02em;
   text-align: center;
   color: var(--black);
-  max-width: 486px;
+  max-width: 335px;
   margin: 0 auto 50px auto;
 }
 
 .sensation-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 19px;
 }
 
 .sensation-item {
-  padding: 28px 32px;
+  padding: 28px 55px;
   border-radius: 15px;
-  width: 270px;
+  width: 335px;
   height: 270px;
+}
+
+.sensation-img {
+  margin-bottom: 25px;
+  border: none;
 }
 
 .chocolate-img {
@@ -381,11 +473,6 @@ header {
 
 .nuts-img {
   background: var(--violet);
-  border: none;
-}
-
-.sensation-img {
-  margin-bottom: 36px;
   border: none;
 }
 
@@ -510,30 +597,40 @@ header {
 
 /* -------------- HOW IT'S made? ----------- */
 .made-section {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .made-section-title {
-  margin-bottom: 50px;
+  margin-bottom: 32px;
 }
 
 .made-title {
   color: var(--orange);
 }
 
-.made-section-flex {
-  display: flex;
-  gap: 20px;
+.made-chocolate {
+  display: none;
+}
+
+.made-chocolate-tablet {
+  display: none;
+}
+
+.made-chocolate-mobile {
+  width: 335px;
+  margin-bottom: 20px;
 }
 
 .made-section-wrap {
-  padding: 32px;
+  padding: 20px 14px;
+  border-radius: 15px;
+  background: var(--white);
 }
 
 .made-section-wrap .made-third-title {
-  width: 350px;
-  margin-bottom: 28px;
+  width: 307px;
+  margin-bottom: 20px;
 }
 
 .made-third-title {
@@ -552,8 +649,8 @@ header {
 }
 
 .made-item {
-  max-width: 425px;
-  margin-bottom: 24px;
+  max-width: 307px;
+  margin-bottom: 18px;
 }
 
 .made-item:last-child {
@@ -562,12 +659,12 @@ header {
 
 /* ------------ chocolate is loved --------- */
 .chocolate-section .second-title {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .chocolate-section {
-  padding-top: 50px;
-  padding-bottom: 100px;
+  padding-top: 30px;
+  padding-bottom: 60px;
 }
 
 .chocolate-title {
@@ -575,13 +672,14 @@ header {
 }
 
 .chocolate-container {
-  padding-top: 42px;
+  padding-top: 32px;
 }
 
 .chocolate-list {
   display: flex;
-  gap: 28px;
-  margin-bottom: 50px;
+  flex-wrap: wrap;
+  gap: 60px;
+  margin-bottom: 32px;
 }
 
 .chocolate-list li {
@@ -599,12 +697,12 @@ header {
 }
 
 .chocolate-review {
-  width: 360px;
-  min-height: 200px;
+  width: 335px;
+  max-height: 200px;
   background-color: #fff;
   border-radius: 15px;
   border: 1px solid rgba(17, 17, 17, 0.1);
-  padding: 56px 24px 24px 24px;
+  padding: 56px 18px 42px 18px;
 }
 
 .review-title {
@@ -650,23 +748,18 @@ header {
 /* -----------------footer------------------ */
 .footer {
   background: var(--violet);
-  padding-top: 50px;
-  padding-bottom: 86px;
-}
-
-.footer-wrap {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 54px;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .footer-paragraf {
   font-weight: 500;
-  font-size: 28px;
-  line-height: 34px;
+  font-size: 24px;
+  line-height: 28px;
   letter-spacing: -0.02em;
   color: var(--white);
   width: 300px;
+  margin-bottom: 32px;
 }
 
 .chocolate-paragraf {
@@ -689,7 +782,7 @@ header {
 }
 
 .contact-item:last-child {
-  margin-bottom: 0;
+  margin-bottom: 32px;
 }
 
 .contact-paragraf,
@@ -701,11 +794,8 @@ header {
 }
 
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: relative;
-  padding-top: 24px;
+  padding-top: 32px;
 }
 
 .footer-content::before {
@@ -719,10 +809,12 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer-navigation-list {
-  display: flex;
-  position: relative;
-  gap: 24px;
+.footer-navigation-list li {
+  margin-bottom: 18px;
+}
+
+.footer-navigation-list li:last-child {
+  margin-bottom: 32px;
 }
 
 .nav-footer {
@@ -752,13 +844,13 @@ header {
   border: 1.5px solid rgba(255, 255, 255, 0.15);
   background-color: transparent;
   border-radius: 30px;
-  padding: 13px 24px;
-  width: 313px;
+  padding: 14px 18px;
+  width: 207px;
 }
 
 .footer-subscribe-input::placeholder {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 14px;
   letter-spacing: -0.02em;
   color: rgba(255, 255, 255, 0.3);
 }
@@ -768,7 +860,7 @@ header {
   font-size: 14px;
   color: var(--white);
   border-radius: 100px;
-  padding: 17px 40px;
+  padding: 14px 24px;
   background-color: var(--orange);
   border: none;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -804,19 +896,19 @@ header {
 .modal {
   background: #fafafa;
   border-radius: 15px;
-  width: 517px;
-  min-height: 794px;
+  width: 311px;
+  min-height: 619px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 40px;
+  padding: 32px 32px 32px 24px;
 }
 
 .modal-second-title {
-  width: 300px;
+  width: 255px;
   text-align: left;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .modal-close-btn {
@@ -828,8 +920,8 @@ header {
   fill: transparent;
   stroke: #111111;
   position: absolute;
-  top: 26px;
-  right: 26px;
+  top: 14px;
+  right: 14px;
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -840,20 +932,20 @@ header {
 
 .modal-lable {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
   letter-spacing: -0.02em;
   color: rgba(64, 64, 64, 0.3);
 }
 
 .modal-input {
   width: 100%;
-  height: 68px;
+  height: 45px;
   border: 1px solid rgba(17, 17, 17, 0.05);
   border-radius: 13px;
-  padding: 22px 22px 22px 62px;
+  padding: 14px 18px 14px 43px;
   background-color: transparent;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .modal-input:hover,
@@ -905,11 +997,11 @@ header {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 24px;
+  left: 18px;
   fill: transparent;
   stroke: #404040;
-  width: 24px;
-  height: 24px;
+  width: 17px;
+  height: 17px;
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -920,14 +1012,21 @@ header {
 
 .modal-textarea {
   width: 100%;
-  margin-top: 8px;
+  margin-top: 4px;
   border: 1px solid rgba(17, 17, 17, 0.05);
   border-radius: 13px;
-  padding: 22px 24px 93px;
+  padding: 14px 18px;
   background-color: transparent;
-  min-height: 137px;
+  min-height: 91px;
   resize: none;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-textarea::placeholder {
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: -0.02em;
+  color: rgba(64, 64, 64, 0.3);
 }
 
 .modal-textarea:hover,
@@ -966,7 +1065,7 @@ header {
 .checkbox-link,
 .checkbox-link-policy {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: -0.02em;
 }
 
@@ -979,4 +1078,461 @@ header {
   text-decoration: underline;
   text-decoration-skip-ink: none;
   margin-left: 4px;
+}
+
+/* _____________________________768px_____________________________ */
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .header-menu-btn,
+  .header-mob-menu {
+    display: none;
+  }
+
+  .header-navigation {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+  }
+
+  /* ________________________________ */
+
+  .header-nav-soc-icon {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+  }
+
+  .header-list {
+    display: flex;
+    gap: 24px;
+  }
+
+  /* ________________________________ */
+
+  .main-section {
+    max-width: 768px;
+    height: 890px;
+
+    background-color: var(--violet);
+    background-image: linear-gradient(
+        rgba(30, 24, 35, 0.4),
+        rgba(30, 24, 35, 0.4)
+      ),
+      url("../images/main-bg-img-tablet.jpg");
+
+    padding-top: 671px;
+    padding-bottom: 40px;
+    border-radius: 30px;
+    margin: 0 auto 40px auto;
+
+    @media screen and (min-resolution: 2x),
+      (-webkit-min-device-pixel-ratio: 2) {
+      background-color: var(--violet);
+      background-image: linear-gradient(
+          rgba(30, 24, 35, 0.4),
+          rgba(30, 24, 35, 0.4)
+        ),
+        url("../images/main-bg-img-tablet-2x.jpg");
+    }
+  }
+
+  .main-title {
+    width: 484px;
+    font-size: 28px;
+  }
+
+  .main-btns {
+    display: flex;
+  }
+
+  .main-btn,
+  .link-made {
+    padding: 14px 40px;
+  }
+
+  .main-btn {
+    min-width: 144px;
+  }
+
+  .link-made {
+    min-width: 183px;
+  }
+
+  .scroll {
+    font-size: 14px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .main-btn-scroll {
+    padding: 8px;
+    margin-left: 14px;
+  }
+
+  /* ________________________________ */
+
+  .features-list {
+    gap: 32px;
+    justify-content: flex-start;
+  }
+
+  .features-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  /* ________________________________ */
+
+  .taste-section {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  .second-title {
+    font-size: 24px;
+  }
+
+  .second-title-taste {
+    max-width: 411px;
+    margin: 0 auto 28px auto;
+  }
+
+  .sensation-paragraf {
+    max-width: 486px;
+  }
+
+  .sensation-list {
+    justify-content: center;
+  }
+
+  /* ________________________________ */
+  .made-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .made-section-title {
+    margin-bottom: 50px;
+  }
+
+  .made-chocolate-mobile {
+    display: none;
+  }
+
+  .made-chocolate-tablet {
+    display: block;
+    width: 614px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .made-section-wrap {
+    padding: 32px;
+    width: 614px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .made-section-wrap .made-third-title {
+    width: 350px;
+    margin-bottom: 28px;
+  }
+
+  .made-item {
+    max-width: 464px;
+  }
+
+  /* ________________________________ */
+
+  .chocolate-section .second-title {
+    margin-bottom: 50px;
+  }
+
+  .chocolate-container {
+    padding-top: 50px;
+  }
+
+  .chocolate-section {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+
+  .chocolate-list {
+    margin-bottom: 50px;
+    gap: 60px 16px;
+    justify-content: center;
+  }
+
+  .chocolate-list li {
+    width: calc(100% - 16px) / 2;
+  }
+
+  .chocolate-review {
+    width: 344px;
+    padding: 56px 16px 42px 16px;
+  }
+
+  /* ________________________________ */
+  .footer {
+    background: var(--violet);
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .footer-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 54px;
+  }
+
+  .footer-paragraf {
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 0;
+  }
+
+  .contact-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-top: 24px;
+  }
+
+  .footer-navigation-list {
+    display: flex;
+    position: relative;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .footer-navigation-list li {
+    margin-bottom: 0;
+  }
+
+  .footer-navigation-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .nav-footer {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .footer-subscribe-input {
+    width: 232px;
+    padding: 14px 24px;
+  }
+
+  .footer-subscribe-btn {
+    padding: 14px 28px;
+  }
+
+  /* ________________________________ */
+
+  .modal {
+    width: 517px;
+    min-height: 794px;
+    padding: 40px;
+  }
+
+  .modal-second-title {
+    width: 300px;
+    margin-bottom: 40px;
+  }
+
+  .modal-close-icon {
+    top: 26px;
+    right: 26px;
+  }
+
+  .modal-lable {
+    font-size: 14px;
+  }
+
+  .modal-input {
+    height: 68px;
+    padding: 22px 22px 22px 62px;
+    margin-top: 8px;
+  }
+
+  .modal-input-icon {
+    left: 24px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .modal-textarea {
+    margin-top: 8px;
+    border: 1px solid rgba(17, 17, 17, 0.05);
+    padding: 22px 24px;
+    min-height: 137px;
+  }
+
+  .modal-textarea::placeholder {
+    font-size: 18px;
+  }
+
+  /* ________________________________ */
+
+  .checkbox-link,
+  .checkbox-link-policy {
+    font-size: 14px;
+  }
+}
+
+/* _____________________________1166px_____________________________ */
+
+@media screen and (min-width: 1166px) {
+  .container {
+    width: 1166px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .header-navigation {
+    display: flex;
+    gap: 90px;
+    align-items: center;
+  }
+
+  /* ________________________________ */
+
+  .main-section {
+    max-width: 1200px;
+    height: 600px;
+
+    background-color: var(--violet);
+    background-image: linear-gradient(
+        rgba(30, 24, 35, 0.4),
+        rgba(30, 24, 35, 0.4)
+      ),
+      url("../images/main-bg-img.jpg");
+
+    padding-top: 381px;
+    border-radius: 30px;
+    margin: 0 auto 72px auto;
+
+    @media screen and (min-resolution: 2x),
+      (-webkit-min-device-pixel-ratio: 2) {
+      background-color: var(--violet);
+      background-image: linear-gradient(
+          rgba(30, 24, 35, 0.4),
+          rgba(30, 24, 35, 0.4)
+        ),
+        url("../images/main-bg-img-2x.jpg");
+    }
+  }
+
+  /* ________________________________ */
+  .container-narro {
+    width: 1086px;
+  }
+
+  .features-list {
+    flex-wrap: nowrap;
+    gap: 70px;
+  }
+
+  .features-list li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 124px;
+    background-color: rgba(255, 255, 255, 0.5);
+    left: 326px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* ________________________________ */
+
+  .taste-section {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+
+  .sensation-item {
+    padding: 28px 32px;
+    width: 269px;
+  }
+
+  .sensation-img {
+    margin-bottom: 36px;
+  }
+
+  /* ________________________________ */
+  .made-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .made-section-flex {
+    display: flex;
+    gap: 20px;
+  }
+
+  .made-chocolate-mobile {
+    display: none;
+  }
+
+  .made-chocolate-tablet {
+    display: none;
+  }
+
+  .made-chocolate {
+    display: block;
+    width: 600px;
+  }
+
+  .made-item {
+    max-width: 425px;
+    margin-bottom: 24px;
+  }
+
+  /* ________________________________ */
+  .chocolate-list {
+    gap: 28px;
+    flex-wrap: nowrap;
+  }
+
+  .chocolate-review {
+    width: 360px;
+    padding: 56px 24px 42px 24px;
+  }
+
+  /* ________________________________ */
+  .footer-subscribe-input {
+    width: 313px;
+  }
+
+  .footer-subscribe-input::placeholder {
+    font-size: 18px;
+  }
+
+  .footer-subscribe-btn {
+    padding: 17px 33px;
+  }
 }

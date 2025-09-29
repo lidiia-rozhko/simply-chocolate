@@ -30,21 +30,23 @@
             <use href="./images/symbol-defs.svg#icon-chocolate-logo"></use>
           </svg>
         </a>
-        <nav class="header-navigation">
-          <ul class="header-list list">
-            <li class="menu-nav">
-              <a href="" class="menu-nav-link link">Home</a>
-            </li>
-            <li class="menu-nav">
-              <a href="#made" class="menu-nav-link link">How it's made?</a>
-            </li>
-            <li class="menu-nav">
-              <a href="#chocolate_loved" class="menu-nav-link link"
-                >Chocolate is loved</a
-              >
-            </li>
-          </ul>
-          <ul class="list">
+        <div class="header-navigation">
+          <nav>
+            <ul class="header-list list">
+              <li class="menu-nav">
+                <a href="" class="menu-nav-link link">Home</a>
+              </li>
+              <li class="menu-nav">
+                <a href="#made" class="menu-nav-link link">How it's made?</a>
+              </li>
+              <li class="menu-nav">
+                <a href="#chocolate_loved" class="menu-nav-link link"
+                  >Chocolate is loved</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <ul class="header-nav-soc-icon list">
             <li>
               <a href="">
                 <svg width="24" height="24" class="menu-nav-icon">
@@ -60,11 +62,58 @@
               </a>
             </li>
           </ul>
-        </nav>
+        </div>
+        <button type="button" class="header-menu-btn">
+          <svg width="28" height="28" class="header-menu-open-btn">
+            <use href="./images/symbol-defs.svg#icon-open-btn"></use>
+          </svg>
+        </button>
+        <div class="header-mob-menu">
+          <button type="button" class="header-menu-close-btn">
+            <svg width="28" height="28" class="header-menu-close-icon">
+              <use href="./images/symbol-defs.svg#icon-close-btn"></use>
+            </svg>
+          </button>
+          <div class="header-mob-menu-flex">
+            <nav class="header-mob-navigation">
+              <ul class="header-mob-list list">
+                <li class="menu-mob-nav">
+                  <a href="" class="menu-nav-mob-link link">Home</a>
+                </li>
+                <li class="menu-mob-nav">
+                  <a href="#made" class="menu-nav-mob-link link"
+                    >How it's made?</a
+                  >
+                </li>
+                <li class="menu-mob-nav">
+                  <a href="#chocolate_loved" class="menu-nav-mob-link link"
+                    >Chocolate is loved</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <ul class="header-mob-soc-icon list">
+              <li>
+                <a href="">
+                  <svg width="24" height="24" class="menu-nav-mob-icon">
+                    <use href="./images/symbol-defs.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <svg width="24" height="24" class="menu-nav-mob-icon">
+                    <use href="./images/symbol-defs.svg#icon-twitter"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </header>
     </div>
+    <!---------------------- MAIN ------------------>
     <main>
-      <!---------------------- MAIN ------------------>
       <section class="main-section">
         <div class="container container-narro">
           <h1 class="main-title">
@@ -144,6 +193,10 @@
           <ul class="sensation-list list">
             <li class="sensation-item chocolate-img">
               <img
+                srcset="
+                  ./images/milk-chocolate.png    1x,
+                  ./images/milk-chocolate-2x.png 2x
+                "
                 src="./images/milk-chocolate.png"
                 alt="MILK CHOCOLATE"
                 width="206"
@@ -172,6 +225,7 @@
             </li>
             <li class="sensation-item milk-img">
               <img
+                srcset="./images/milk.png 1x, ./images/milk-2x.png 2x"
                 src="./images/milk.png"
                 alt="Milk"
                 width="206"
@@ -201,6 +255,7 @@
             </li>
             <li class="sensation-item nuts-img">
               <img
+                srcset="./images/nuts.png 1x, ./images/nuts-2x.png 2x"
                 src="./images/nuts.png"
                 alt="NUTS"
                 width="206"
@@ -221,8 +276,8 @@
                   Almonds, pistachios, and walnuts are some types of nuts that
                   contain healthy nutrients. When eaten as part of a
                   nutrient-dense diet, these 9 nuts may offer benefits such as
-                  reducing your risk of heart disease. They’re a good source of
-                  fiber, healthy fats, and plant protein. Plus, they’re great on
+                  reducing your risk of heart disease. They're a good source of
+                  fiber, healthy fats, and plant protein. Plus, they're great on
                   their own.
                 </p>
               </div>
@@ -230,6 +285,10 @@
             </li>
             <li class="sensation-item semi-sweet-img">
               <img
+                srcset="
+                  ./images/semi-sweet-chocolate.png    1x,
+                  ./images/semi-sweet-chocolate-2x.png 2x
+                "
                 src="./images/semi-sweet-chocolate.png"
                 alt="SEMI - SWEET CHOCOLATE"
                 width="206"
@@ -268,10 +327,37 @@
           </h2>
           <div class="made-section-flex">
             <img
+              srcset="
+                ./images/made-chocolate.jpg    1x,
+                ./images/made-chocolate-2x.jpg 2x
+              "
               src="./images/made-chocolate.jpg"
               alt="Whisking melted chocolate in a bowl"
               width="600"
               height="400"
+              class="made-chocolate"
+            />
+            <img
+              srcset="
+                ./images/made-chocolate-mobile.jpg    1x,
+                ./images/made-chocolate-mobile-2x.jpg 2x
+              "
+              src="./images/made-chocolate-mobile.jpg"
+              alt="Whisking melted chocolate in a bowl"
+              width="600"
+              height="400"
+              class="made-chocolate-mobile"
+            />
+            <img
+              srcset="
+                ./images/made-chocolate-tablet.jpg    1x,
+                ./images/made-chocolate-tablet-2x.jpg 2x
+              "
+              src="./images/made-chocolate-tablet.jpg"
+              alt="Whisking melted chocolate in a bowl"
+              width="600"
+              height="400"
+              class="made-chocolate-tablet"
             />
             <div class="made-section-wrap">
               <h3 class="made-third-title">
@@ -324,6 +410,10 @@
             <ul class="chocolate-list list">
               <li>
                 <img
+                  srcset="
+                    ./images/review-photo-1.jpg    1x,
+                    ./images/review-photo-1-2x.jpg 2x
+                  "
                   src="./images/review-photo-1.jpg"
                   alt="Victoria Dobrzhanska, customer review about Simply Chocolate bar"
                   width="80"
@@ -340,6 +430,10 @@
               </li>
               <li>
                 <img
+                  srcset="
+                    ./images/review-photo-2.jpg    1x,
+                    ./images/review-photo-2-2x.jpg 2x
+                  "
                   src="./images/review-photo-2.jpg"
                   alt="Nazar Babenko, customer review about Simply Chocolate confection"
                   width="80"
@@ -357,6 +451,10 @@
               </li>
               <li>
                 <img
+                  srcset="
+                    ./images/review-photo-3.jpg    1x,
+                    ./images/review-photo-3-2x.jpg 2x
+                  "
                   src="./images/review-photo-3.jpg"
                   alt="Olena Kampusch, customer review about Simply Chocolate bar"
                   width="80"
@@ -500,6 +598,7 @@
               name="user-text"
               id="user-text"
               class="modal-textarea"
+              placeholder="Enter text"
             ></textarea>
           </div>
 
@@ -531,5 +630,6 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
   </body>
 </html>
